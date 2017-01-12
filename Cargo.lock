@@ -152,14 +152,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gl"
-version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "gl_generator 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "gl_generator"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -347,7 +339,7 @@ name = "ray-tracer"
 version = "0.1.0"
 dependencies = [
  "euclid 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "gl 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.2.30 (registry+https://github.com/rust-lang/crates.io-index)",
  "glutin 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "tracer 0.1.0",
@@ -564,7 +556,6 @@ dependencies = [
 "checksum euclid 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)" = "0c274f13773ec277a48408d0c7a8dc935ad4bfe190f4cfccd0126d203afc3c83"
 "checksum fs2 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "bcd414e5a1a979b931bb92f41b7a54106d3f6d2e6c253e9ce943b7cd468251ef"
 "checksum gdi32-sys 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "65256ec4dc2592e6f05bfc1ca3b956a4e0698aa90b1dff1f5687d55a5a3fd59a"
-"checksum gl 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a201d035da99a5c7fabbf4d6b0819f89201498b955d9b73380ebae63bbb5e2f0"
 "checksum gl_generator 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f1d8edc81c5ae84605a62f5dac661a2313003b26d59839f81d47d46cf0f16a55"
 "checksum gleam 0.2.30 (registry+https://github.com/rust-lang/crates.io-index)" = "6af023107aa969ccf8868a0304fead4b2f813c19aa9a6a243fddc041f3e51da5"
 "checksum glutin 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f10fe6cb2f7e559e470cc0dfa2c89a4f476fc99ec1862632b057e68c3831eb7a"

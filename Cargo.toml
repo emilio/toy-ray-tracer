@@ -12,6 +12,6 @@ members = [
 [dependencies]
 euclid = "*"
 glutin = "*"
-gl = "*"
+gleam = "*"
 libc = "*"
 tracer = { path = "tracer" }
