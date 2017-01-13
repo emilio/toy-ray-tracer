@@ -41,7 +41,7 @@ impl ops::Mul<f32> for Color {
         Color::new(self.r * rhs,
                    self.g * rhs,
                    self.b * rhs,
-                   self.a * rhs)
+                   self.a)
     }
 }
 
@@ -338,7 +338,30 @@ impl Scene {
                     }
                     self.set_z_at(z_buffer, x, y,
                                   current.position.z.min(z_value));
-                    let object_color = shade(self, &current, object);
+
+                    // See if the current point is at shadow, if so, apply it.
+                    let light_ray = Ray::new(self.light_position,
+                                             normalize(current.position - self.light_position).to_untyped(),
+                                             1.0);
+                    let distance_to_light = length(light_ray.position - current.position);
+                    let mut in_shadow = false;
+                    for maybe_intersected_object in &self.objects {
+                        if object as *const _ == maybe_intersected_object as *const _ {
+                            continue; // Ignore the same object.
+                        }
+                        if let Some(intersection) = light_ray.intersects_with(&maybe_intersected_object) {
+                            if length(intersection.position - light_ray.position) < distance_to_light {
+                                in_shadow = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    let mut object_color = shade(self, &current, object);
+                    if in_shadow {
+                        object_color = object_color * 0.5;
+                    }
+
                     // println!("Current: {:?}", current);
 
                     let color = self.get_color_at(framebuffer, x, y);

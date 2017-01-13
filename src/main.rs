@@ -52,7 +52,7 @@ fn main() {
     scene.add_object(sphere);
 
     let sphere = tracer::ObjectKind::Sphere { radius: 90. };
-    let sphere = tracer::Object::new(sphere, WorldPosition::new(500., 500., -100.));
+    let sphere = tracer::Object::new(sphere, WorldPosition::new(500., 500., -200.));
     scene.add_object(sphere);
     let buffer = scene.draw();
 
