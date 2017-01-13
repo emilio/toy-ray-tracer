@@ -45,14 +45,14 @@ fn main() {
     println!("hidpi factor: {}", window.hidpi_factor());
 
     let mut scene = tracer::Scene::new(Size2D::new(800, 800),
-                                       WorldPosition::new(0.0, 0.0, -100.),
-                                       WorldPosition::new(0.0, 0.0, -100.));
-    let sphere = tracer::ObjectKind::Sphere { radius: 100. };
-    let sphere = tracer::Object::new(sphere, WorldPosition::new(400., 400., 0.));
+                                       WorldPosition::new(400.0, 200.0, -150.),
+                                       WorldPosition::new(1000.0, 1000.0, -5000.));
+    let sphere = tracer::ObjectKind::Sphere { radius: 120. };
+    let sphere = tracer::Object::new(sphere, WorldPosition::new(400., 400., 100.));
     scene.add_object(sphere);
 
-    let sphere = tracer::ObjectKind::Sphere { radius: 50. };
-    let sphere = tracer::Object::new(sphere, WorldPosition::new(500., 500., 0.));
+    let sphere = tracer::ObjectKind::Sphere { radius: 90. };
+    let sphere = tracer::Object::new(sphere, WorldPosition::new(500., 500., -100.));
     scene.add_object(sphere);
     let buffer = scene.draw();
 
